@@ -1,13 +1,15 @@
 package com.rentals;
 import java.util.ArrayList;
 import java.util.List;
+
 public class Customer {
     private final com.rentals.generateInvoice generateInvoice = new generateInvoice(this);
     private String name;
     private List<Rental> rentals;
 
-    public Customer(String name) {
-        this.name = name;
+    public Customer(final String customerName) {
+        super();
+        this.name = customerName;
         this.rentals = new ArrayList<>();
     }
 
