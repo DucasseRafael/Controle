@@ -6,13 +6,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class CustomerTest {
     @Test
-    void lesGettersFonctionnentCorrectement() {
+    void GettersWorkCorrectelly() {
         Customer customer = new Customer("Yann");
         assertThat(customer.getName()).isEqualTo("Yann");
     }
 
     @Test
-    void devraitGenererUneFactureCorrecte() {
+    void ShouldGenerateAnInvoiceCorrectelly() {
         CarVehicle velo = new CarVehicle("Velo electrique", 1, 100.0);
         CarVehicle fourgonnette = new CarVehicle("Fourgonnette professionnelle", 5, 100.0);
         Customer customer = new Customer("Yann Carpentier");
