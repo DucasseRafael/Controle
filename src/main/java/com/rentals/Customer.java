@@ -2,6 +2,7 @@ package com.rentals;
 import java.util.ArrayList;
 import java.util.List;
 public class Customer {
+    private final com.rentals.generateInvoice generateInvoice = new generateInvoice(this);
     private String name;
     private List<Rental> rentals;
 
@@ -23,20 +24,11 @@ public class Customer {
     }
 
     public String generateInvoice() {
-        double totalAmount = 0;
-        StringBuilder result = new StringBuilder("Invoice for " + getName() + "\n");
 
-        for (Rental rental : rentals) {
-            double rentalAmount = calculateRentalAmount(rental);
-            result.append("\t").append(rental.getCarVehicle().getDescription()).append("\t").append(rentalAmount).append("\n");
-            totalAmount += rentalAmount;
-        }
-
-        result.append("Total amount: ").append(totalAmount);
-        return result.toString();
+        return generateInvoice.generateInvoice();
     }
 
-    private double calculateRentalAmount(Rental rental) {
+    public double calculateRentalAmount(Rental rental) {
         double dailyRate = rental.getCarVehicle().getPricePerDay();
         int duration = rental.getDurationInDays();
 
