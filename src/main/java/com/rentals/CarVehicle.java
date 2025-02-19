@@ -1,35 +1,46 @@
 package com.rentals;
 
 public class CarVehicle {
+    private static final double CONSTANT025 = 0.25;
+    public static final double CONSTANT075 = 0.75;
+    private static final double CONSTANT200 = 2.0;
+    private static final double CONSTANT125 = 1.25;
     private String carVehicleDescription;
     private int carVehicleType; // 1: vélo électrique, 2: voiture 3p. électrique, 3: voiture 5p. électrique, 4: camping car essence, 5: fourgonnette diesel
     private double carVehiclePricePerDay;
 
-    public CarVehicle(String description, int type, double basePricePerDay) {
+    /** Constroctor Class CarVehicle
+     * @param description
+     * @param type
+     * @param basePricePerDay
+     */
+
+    public CarVehicle(final String description, final int type, final double basePricePerDay) {
+        super();
         this.carVehicleDescription = description;
         this.carVehicleType = type;
-        setPricePerDay(basePricePerDay);
+        this.setPricePerDay(basePricePerDay);
     }
 
     public String getDescription() {
-        return carVehicleDescription;
+        return this.carVehicleDescription;
     }
 
     public int getType() {
-        return carVehicleType;
+        return this.carVehicleType;
     }
 
     public double getPricePerDay() {
-        return carVehiclePricePerDay;
+        return this.carVehiclePricePerDay;
     }
 
-    private void setPricePerDay(double basePricePerDay) {
+    private void setPricePerDay(final double basePricePerDay) {
         switch(this.carVehicleType) {
-            case 1: this.carVehiclePricePerDay = basePricePerDay*0.25; break;
-            case 2: this.carVehiclePricePerDay = basePricePerDay*0.75; break;
-            case 3: this.carVehiclePricePerDay = basePricePerDay*1.0; break;
-            case 4: this.carVehiclePricePerDay = basePricePerDay*2.0;break;
-            case 5: this.carVehiclePricePerDay = basePricePerDay*1.25;break;
+            case 1: this.carVehiclePricePerDay = basePricePerDay* CarVehicle.CONSTANT025; break;
+            case 2: this.carVehiclePricePerDay = basePricePerDay* CarVehicle.CONSTANT075; break;
+            case 3: this.carVehiclePricePerDay = basePricePerDay; break;
+            case 4: this.carVehiclePricePerDay = basePricePerDay* CarVehicle.CONSTANT200;break;
+            case 5: this.carVehiclePricePerDay = basePricePerDay* CarVehicle.CONSTANT125;break;
             default: throw new RuntimeException("Illegal carVehicleType value");
         }
     }
