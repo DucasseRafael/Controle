@@ -5,13 +5,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class CarVehicleTest {
     @Test
-    void lesAccesseursFonctionnentCorrectement() {
+    void getterWorksCorrectelly() {
         CarVehicle vehicle = new CarVehicle("Super vélo à selle confortable", 1, 100.0);
         assertThat(vehicle.getDescription()).isEqualTo("Super vélo à selle confortable");
         assertThat(vehicle.getType()).isEqualTo(1);
     }
     @Test
-    void calculatePricePerDayFonctionneCorrectementPourTypesCarsVehiclesCorrects() {
+    void calculatePricePerDayWorkCorrectellyForTypesCarsVehiclesCorrects() {
         CarVehicle vehicle1 = new CarVehicle("Super vélo à selle confortable", 1, 100.0);
         CarVehicle vehicle2 = new CarVehicle("Voiture sportive", 2, 100.0);
         CarVehicle vehicle3 = new CarVehicle("Voiture familiale", 3, 100.0);
