@@ -22,18 +22,30 @@ public class CarVehicle {
         this.setPricePerDay(basePricePerDay);
     }
 
-    public String getDescription() {
+    /** getter getDescription
+     * @return vehicle description
+     */
+    public  String getDescription() {
         return this.carVehicleDescription;
     }
 
-    public int getType() {
+    /** getter getType
+     * @return vehicle type
+     */
+    public  int getType() {
         return this.carVehicleType;
     }
 
+    /** getter PricePerDay
+     * @return car PricePerDay
+     */
     public double getPricePerDay() {
         return this.carVehiclePricePerDay;
     }
 
+    /** Set PricePerDay based on the basePricePerDay
+     * @param basePricePerDay
+     */
     private void setPricePerDay(final double basePricePerDay) {
         switch(this.carVehicleType) {
             case 1: this.carVehiclePricePerDay = basePricePerDay* CarVehicle.CONSTANT025; break;
