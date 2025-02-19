@@ -21,7 +21,7 @@ class CustomerTest {
         customer.addRental(new Rental(velo, LocalDate.of(2022, 10, 1), 2));
         customer.addRental(new Rental(fourgonnette, LocalDate.of(2022, 11, 15), 4));
         final String invoice = customer.generateInvoice();
-        
+
         AbstractStringAssert<?> assertThatString = assertThat(invoice);
         assertThatString.contains("Invoice for Yann Carpentier");
         assertThatString.contains("Velo electrique\t50.0");

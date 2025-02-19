@@ -22,4 +22,11 @@ public class Rental {
     public int getDurationInDays() {
         return durationInDays;
     }
+
+    public double calculateRentalAmount() {
+        double dailyRate = getCarVehicle().getPricePerDay();
+        int duration = getDurationInDays();
+
+        return dailyRate * duration;
+    }
 }
